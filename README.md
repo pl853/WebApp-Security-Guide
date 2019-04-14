@@ -180,11 +180,17 @@ There are multiple secondary measures that can be taken to prevent session hijac
 - Have variable sessionID's </br>
    If you make sure the sessionID changes with every request made by the client it's harder for the attacker to hijack the session. Unfortunatly this is also not secure enough since it can take a while for a user to send a new request. In the time before a new request an attacker could have already taken over the whole session blocking the victim of further access.
 
-   ![sessionwarning](https://user-images.githubusercontent.com/24454699/56097146-1e90c480-5ee0-11e9-9abf-e955eb4f09b4.png)
+ ![sessionwarning](https://user-images.githubusercontent.com/24454699/56097146-1e90c480-5ee0-11e9-9abf-e955eb4f09b4.png)
    </br>
 
 ## HTTPS
+In the procces of making a web server secure, encryption plays an important role. In a web setting, encryption usually means HTTPS. To check if a webserver usses encryption you can either:
+- Check the url. If we take githubs website for example you will see that the url looks like this :  https://github.com/PieterLems/.  As you can see, in front of the github.com there is HTTPS, which meanse the webserver usses encryption.
+- Another way to check this, is to check the logo in front of your URL bar of your browser. (see the image below)
 
+![githubsecure](https://user-images.githubusercontent.com/24454699/56097236-1be29f00-5ee1-11e9-8163-fc7901236364.png)
+</br>
+As you can see in the image there is a shield in front of the URL bar. This means that the webserver usses encryption.
 ### PACKET SNIFFING
 
 ### MITM (MAN IN THE MIDDLE ATTACK)
