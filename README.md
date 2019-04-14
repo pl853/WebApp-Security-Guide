@@ -150,6 +150,10 @@ Solving these concerns can be done by storing the cookie information on the serv
 
 ## SESSIONS
 Session are a collection of variables that make up a state. They are located on the server-side. To make sure the session is associated with the correct client a session ID is passed on each request to the server. So the session ID uniquely identifies with one session object on the server. </br>
+The image below shows a visual represantation of a session object. </br>
+
+![SessionID](https://user-images.githubusercontent.com/24454699/56096940-cb1d7700-5edd-11e9-927f-71faa21290d6.png)
+</br>
 
 ### SESSION HIJACKING
 These days a lot of websites use session based login. This means a session is initiated when the user has given a valid username and password. But what if someone gets access to the session ID of the user thats logged in? </br>
