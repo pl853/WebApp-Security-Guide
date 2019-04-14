@@ -25,3 +25,26 @@ A TCP connection is created, then the browser sends a HTTP request to the server
 
 The browser is always the initiating party and the server nervel calls back. This means that HTTP is a client/server protocol. The client in this case doesn't always have to be a browser. It can also be your typical instagram application.
 
+The HTTP is line oriented which means that the communication takes place using strings of characters which are separated by carriage return (ASCII 13) and line feded (ASCII 10).
+
+There are 2 different types of requests that can be send by the client.
+- GET
+  In this request the client asks for information. With the GET request the browser is free to resent the request, for example, this happends when the user presses the back button on a website. (this is not suitable with for example, money transfers because this will resend the transfer each time the back button is pressed) In a GET request the parrameters of the request are encoded in the URL. In the image below you can find an example of the GET request. </br>
+  ![get_req](https://user-images.githubusercontent.com/24454699/56095124-1ed19580-5ec9-11e9-9224-5692be6ffa91.png)
+  </br>
+  The following can be said about this image:
+  - The first line shows the Request-line. In the request-lin the GET is called the method token. The HTTP is the request URI and the 1.0 is the HTTP-version identifier.
+  - The lines below the request-line are the Request-header lines.
+  
+  After the GET request is send by the client the server will send back a responce. (see image below)</br>
+  ![responce_get](https://user-images.githubusercontent.com/24454699/56095184-b800ac00-5ec9-11e9-91e1-076b6c2b2eb6.png)
+  </br>
+
+  The following can be said about the image above:
+  - The first line is called the status line. The HTTP/1.1 is called the HTTP-version, the 200 OK is called the status code. In this case the status code is 200 which means the request is OK. Another status code which we all reconize is status code 404 NOT FOUND which means that the requested webpage is not found.
+  - The lines after the status lines (encirkeld in red) are calle the Request-header lines. In these lines you can find the content length. The value (in this case 84) represents the amount of bytes that are in the requested content.
+  - The lines below that (encirkeld in blue) is the content that is requested. This is written in HTML.
+  
+- POST
+
+
