@@ -230,7 +230,7 @@ A visual represantation of a MITM attack is shown in the image below:
 ![mitm](https://user-images.githubusercontent.com/24454699/56097508-bb556100-5ee4-11e9-8524-a7bdd3e27197.png)
 </br>
 
-### PREVENT MITM ATTACKS
+### PREVENT MITM ATTACKS / CBM (CERTIFICATE BASES MUTUAL) AUTHENTICATION
 When you make use of a HTTPS connecting the client always verifies something called the server's certificate. This certificate is an unique identifier of the webserver. </br>
 The image below shows a certificate</br>
 
@@ -243,16 +243,14 @@ The image below is a visual represantation of how the servers certificate is ver
 </br>
 
 HTTPS doesn't always prevent the attacker from succeding when performing a MITM attack, this can be caused by a few factors:
-- Ignorant users
+- Ignorant users, the user neglects the warnings given by the browser.
+- The browser doenst give out any warnings.
+- The user falls for cheap domain name or protocol tricks used by the attacker. 
 - Fake websites with similar domains. (the html of a website can be easily replicated by the attacker and the domain name can be spoofed in something that looks like the domain the victim tries to access)
-- Certification authorities mistakes
-- Bugs in software
-
-
-
-
-
-### CBM (CERTIFICATE BASES MUTUAL) AUTHENTICATION
+- Certification authorities mistakes, the CA may be tricked into giving out false certificates.
+- The browser trusts a CA (certificate authoritie) that isn't trusted by the user.
+- Bugs in the browser, the browser has a buggy SSL/TLS implentation.
+- The user's computer is compromised by the attacker.
 
 ## SECURITY LAB 1
 
