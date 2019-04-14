@@ -231,9 +231,15 @@ A visual represantation of a MITM attack is shown in the image below:
 </br>
 
 ### PREVENT MITM ATTACKS
-When you make use of a HTTPS connecting the client always verifies something called the server's certificate. This certificate is an unique identifier of the webserver. The image below shows a certificate</br>
+When you make use of a HTTPS connecting the client always verifies something called the server's certificate. This certificate is an unique identifier of the webserver. </br>
+The image below shows a certificate</br>
 
 ![certificate](https://user-images.githubusercontent.com/24454699/56097648-cf01c700-5ee6-11e9-867d-5a570fc18c93.png)
+</br>
+
+The image below is a visual represantation of how the servers certificate is verified. <br>
+
+![certificateverify](https://user-images.githubusercontent.com/24454699/56097685-551e0d80-5ee7-11e9-9951-498b35ffba70.png)
 </br>
 
 HTTPS doesn't always prevent the attacker from succeding when performing a MITM attack, this can be caused by a few factors:
