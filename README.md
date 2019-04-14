@@ -72,10 +72,17 @@ On a request the referer header contains the url  of the website  where the docu
 In the image above the the image used is from the website : http://www.site.example/index.html. This meanse that you use a snippit (small part) of the html code from that website. It's the same for the link below the image. 
 
 ### SECURITY CONCERN: REFERER HEADER
+Because a part of the code,  from the website that has the image on it,  is used in your own website, it will  also use any JavaApplets, ActiveX scripts and plug-ins included in that  page.
 
-## CACHE
+## CACHING
+The term Caching refers to temporarily storing documents on the client or server side to reduce the download time. When we talk about caching you can devide it in two types of chaches:
+- Local cache </br>
+  This is manged by the client (your browser). When the client sends a request for a type of document it saves the document on your disk. When you go to the document (the page in this case) again the loading time will be much lower because it can get the document from your local storage instead of a remote server.
+- Shared cache </br>
+  
 
-### SECURITY CONCERN: CACHE
+
+### SECURITY CONCERN: CACHING
 
 ## COOKIES
 
@@ -95,4 +102,30 @@ In the image above the the image used is from the website : http://www.site.exam
 
 ### CBM (CERTIFICATE BASES MUTUAL) AUTHENTICATION
 
+## SECURITY LAB 1
 
+## PASSING DATA IN SUBSYSTEMS
+
+### INTRODUCTION 
+
+### METACHARACTERS
+
+### SECURITY CONCERNS: PASSING DATA IN SUBSYSTEMS
+
+## SQL INJECTIONS
+
+### PREVENT SQL INJECTION
+
+## SHELL COMMAND INJECTIONS
+
+### PREVENT SQL INJECTIONS
+
+## USER INPUT
+
+### INTRODUCTION
+
+## INPUT
+
+### SECURITY CONCERNS: INPUT
+
+## VALIDATING INPUT
