@@ -127,6 +127,13 @@ Some documents should not be cached. A few examples of those documents are:
 The sites need a way to tell the browser and proxies to not save these kind of documents. This is done in the HTTP headers. Different versions of HTTP apply different mechanisms for cache control. This means that an older version of HTTP could also be a security consern.
 
 ## COOKIES
+HTTP is a stateless protocol. This means that there are no connections to previous request made by the same client. To create a connection (state) between these requests we make use of cookies. Cookies are an extension of HTTP to give us just the state, So with cookies the webserver asks the client to remember a small piece of information. This info is passed back by the client on each request to the same server.</br>
+
+An example of a cookie is: On google search the user can set the amount of results returned by a google search. The cookie makes sure the amount set by the user is remember each time the user does a search on google.</br>
+
+The HTTP header is used for both setting and returning the cookies. When the server want the client to remember a cookie it passes a Set-Cookie Header in the response. The image below is an example of a Set-Cookie Header. </br>
+![set_cookie_header](https://user-images.githubusercontent.com/24454699/56096540-14b79300-5ed9-11e9-8a07-1c79ca99142e.png)
+</br>
 
 ### SECURITY CONCERN: COOKIES
 
