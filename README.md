@@ -184,13 +184,23 @@ There are multiple secondary measures that can be taken to prevent session hijac
    </br>
 
 ## HTTPS
-In the procces of making a web server secure, encryption plays an important role. In a web setting, encryption usually means HTTPS. To check if a webserver usses encryption you can either:
+In the procces of making a web server secure, encryption plays an important role. In a web setting, encryption usually means HTTPS.  This means that all the HTTP  communication is done over an encrypted channel. To check if a webserver usses encryption you can either:
 - Check the url. If we take githubs website for example you will see that the url looks like this :  https://github.com/PieterLems/.  As you can see, in front of the github.com there is HTTPS, which meanse the webserver usses encryption.
-- Another way to check this, is to check the logo in front of your URL bar of your browser. (see the image below)
+- Another way to check this, is to check the logo in front of your URL bar of your browser. As you can see in the image there is a shield in front of the URL bar. This means that the webserver usses encryption.
 
-![githubsecure](https://user-images.githubusercontent.com/24454699/56097236-1be29f00-5ee1-11e9-8163-fc7901236364.png)
+  ![githubsecure](https://user-images.githubusercontent.com/24454699/56097236-1be29f00-5ee1-11e9-8163-fc7901236364.png)
 </br>
-As you can see in the image there is a shield in front of the URL bar. This means that the webserver usses encryption.
+
+The encrypted channel can be provided by the following protocols:
+- Secure Socket Layer (SSL)
+- Transport Layer Security (TLS)
+
+The encryption protocols only protect the connection between the client and server. The attacker can still attack both the client and the server, but he will have a hard time attaking the communication between those two. </br>
+The image below is a visual represantation of the difference between a HTTP (on top of the image) and a HTTPS (at the bottom of the image) connection.
+
+![secureinconnection](https://user-images.githubusercontent.com/24454699/56097339-36694800-5ee2-11e9-96c4-7ad2aa4ddd8d.png)
+</br>
+
 ### PACKET SNIFFING
 
 ### MITM (MAN IN THE MIDDLE ATTACK)
