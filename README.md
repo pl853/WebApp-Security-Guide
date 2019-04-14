@@ -157,9 +157,25 @@ The image below shows a visual represantation of a session object. </br>
 
 ### SESSION HIJACKING
 These days a lot of websites use session based login. This means a session is initiated when the user has given a valid username and password. But what if someone gets access to the session ID of the user thats logged in? </br>
-In this case the attacker would not need the password of the victim since the session ID works as a temporarily replacement for the password. 
+In this case the attacker would not need the password of the victim since the session ID works as a temporarily replacement for the password.  There are multiple ways an attacker can get access of the SessionID :
+- Guess it
+- Calculate it
+- Brute-force it
+- Trial and error search
+- Cross site scripting
+- Use referer header
+- Packet sniffing
+The list goes on and on
 
 ### PREVENT SESSION HIJACKING
+As mentioned above there are a lot of ways an attacker can find the sessionID. To prevent this from happening you need to improve the secrecy of the SessionID. The key to preventing your sessionID from being stolen is making it unavailable to third parties. A lot of websites use secondary measures to prevent session hijacking even after the sessionID is compromised.</br>
+CAUTION : none of these secondary measures offer full protection to session hijacking, the secrecy of the sessionID is the only real mechanism for protection.
+
+### SECONDARY MEASURES FOR PREVENTING SESSION HIJACKING
+There are multiple secondary measures that can be taken to prevent session hijacking:
+- Tie the sessionID to the IP address of the client.
+  This measure wont protect you from attackers that use the same IP address. For example when using a VPN you have the same IP addres as other users that use the same VPN.
+- Tie the sessionID to certain HTTP Headers passed by the client. This is also not bullet proof since the attacker can replicate the HTTP headers your client sends.
 
 ## HTTPS
 
