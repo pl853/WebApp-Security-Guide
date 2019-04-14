@@ -8,6 +8,41 @@ In this guide you will learn to understand potential risks when creating a web a
 - Explains how code developers’ mistakes may be exploited to the benefit of the attackers and how to prevent these attacks.
 - Build secure web applications using secure coding practices.
 
+
+subjects:
+HTTP
+GET/POST REQUESTS
+GET REQUESTS
+POST REQUESTS
+SECURITY CONCERNS : GET/POST REQUESTS
+REFERER HEADER
+SECURITY CONCERNS : REFERER HEADER
+CHANGING
+SECURITY CONCERNS : CHANGING
+COOKIES
+SECURITY CONCERN: COOKIES
+SESSIONS
+SESSION HIJACKING
+PREVENT SESSION HIJACKING
+HTTPS
+PACKET SNIFFING
+MITM (MAN IN THE MIDDLE ATTACK)
+CBM (CERTIFICATE BASES MUTUAL) AUTHENTICATION
+SECURITY LAB 1
+PASSING DATA IN SUBSYSTEMS
+INTRODUCTION 
+METACHARACTERS
+SECURITY CONCERNS: PASSING DATA IN SUBSYSTEMS
+SQL INJECTIONS
+PREVENT SQL INJECTION
+SHELL COMMAND INJECTIONS
+PREVENT SQL INJECTIONS
+USER INPUT
+ INTRODUCTION
+INPUT
+SECURITY CONCERNS: INPUT
+VALIDATING INPUT
+
 Tools used in this guide </br>
 - VirtualBox, This tool is used to setup a secure test inveronment
 - Postman, This tool is used for performing intergration testing with your API.
@@ -16,6 +51,7 @@ There are three specifications that are central to the web:</br>
 - URL (Uniform Recourse Locators)
 - HTML (HyperText Markup Language)
 - HTTP (HyperText Tranfer Protocol)
+ 
 
 ## HTTP</br>
 In the image below you can see a represantation of how you computer connects to a server.</br>
