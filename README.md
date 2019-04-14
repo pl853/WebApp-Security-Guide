@@ -1,4 +1,4 @@
-#Web Application Security Guide
+##Web Application Security Guide
 
 Web Applications are currently the predominant source of software vulnerabilities exploited in online attacks.Quantity and importance of data entrusted to web applications is growing, and defenders need to learn how to secure them. Traditional network defences, such as firewalls, fail to secure web applications. There is a growing need and demand for web programmers to be security literate. </br>
 
@@ -18,4 +18,10 @@ There are three specifications that are central to the web:
 - HTTP (HyperText Tranfer Protocol)
 
 HTTP
-In the image below you can see a represantation of how you computer connects to a server. 
+In the image below you can see a represantation of how you computer connects to a server.</br>
+![client-server](https://user-images.githubusercontent.com/24454699/56094773-b2a16280-5ec5-11e9-8373-ca946d15258f.png)
+</br>
+A TCP connection is created, then the browser sends a HTTP request to the server asking for the wanted document. The webserver than replies with the page content and the closes the TCP connection again.
+
+The browser is always the initiating party and the server nervel calls back. This means that HTTP is a client/server protocol. The client in this case doesn't always have to be a browser. It can also be your typical instagram application.
+
