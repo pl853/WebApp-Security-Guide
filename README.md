@@ -217,6 +217,17 @@ A visual represantation of what happends when packets are being sniffed over an 
 </br>
 
 ### MITM (MAN IN THE MIDDLE ATTACK)
+In a MITM attack the attacker tricks the victim's computer into connection to the computer of the attacker rather than connecting it to the real server.</br>
+Take for example a situation where a user connects to a bank server:
+- The attacker tricks the user's computer in thinking that the attackers computer is the bank's server.
+- The attacker than forwards all the communication to the banks server. 
+- From the victim's point it looks like he's connected to the bank server but in reality all the communication is send trought the attackers computer.
+- This enables the attacker to intercept all the communication made between the 2 parties. (bank and victim)
+
+A visual represantation of a MITM attack is shown in the image below:
+
+![mitm](https://user-images.githubusercontent.com/24454699/56097508-bb556100-5ee4-11e9-8524-a7bdd3e27197.png)
+</br>
 
 ### CBM (CERTIFICATE BASES MUTUAL) AUTHENTICATION
 
