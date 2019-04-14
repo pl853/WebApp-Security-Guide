@@ -30,7 +30,7 @@ The HTTP is line oriented which means that the communication takes place using s
 ## GET/POST REQUESTS 
 There are 2 different types of requests that can be send by the client.
 ### GET REQUESTS
-  In this request the client asks for information. With the GET request the browser is free to resent the request, for example, this happends when the user presses the back button on a website. (this is not suitable with for example, money transfers because this will resend the transfer each time the back button is pressed) In a GET request the parrameters of the request are encoded in the URL. In the image below you can find an example of the GET request. </br>
+  In this request the client asks for information. With the GET request the browser is free to resent the request, for example, this happends when the user presses the back button on a website. (this is not suitable with for example, money transfers because this will resend the transfer each time the back button is pressed) In a GET request the parameters of the request are encoded in the URL. In the image below you can find an example of the GET request. </br>
 
   ![get_req](https://user-images.githubusercontent.com/24454699/56095124-1ed19580-5ec9-11e9-9224-5692be6ffa91.png)
 </br>
@@ -49,4 +49,12 @@ There are 2 different types of requests that can be send by the client.
   - The lines below that (encirkeld in blue) is the content that is requested. This is written in HTML.
 
 ### POST  REQUESTS
+In this request the clients sends information that changes the information currently on the server. This request cannot be resend by the client without it asking permission for it.  The parameters of a POST request are hidden.  In the image below you can find an example of a POST request. </br>
+![post_req](https://user-images.githubusercontent.com/24454699/56095517-5fcba900-5ecd-11e9-8fe6-4c2608f5174f.png)
+</br>
 
+It's basicly the same as a GET request only in this case the method token is POST. You can also see that the content-type is an encoded form. The content-lenght is again the amoubtn of bytes posted by the request. In this case a user tries to login using the username jdoe and the password BritneySpears. This can be seen in the last line.</br>
+URL encoding means that you change certain characters found in the URL by encoding them using a % sign followed by tho hexadecimal digits. (see image below)</br>
+
+![encoded](https://user-images.githubusercontent.com/24454699/56095603-0617ae80-5ece-11e9-8e11-f91f98a9946d.png)
+</br>
