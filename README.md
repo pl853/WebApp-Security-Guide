@@ -173,9 +173,15 @@ CAUTION : none of these secondary measures offer full protection to session hija
 
 ### SECONDARY MEASURES FOR PREVENTING SESSION HIJACKING
 There are multiple secondary measures that can be taken to prevent session hijacking:
-- Tie the sessionID to the IP address of the client.
+- Tie the sessionID to the IP address of the client. </br>
   This measure wont protect you from attackers that use the same IP address. For example when using a VPN you have the same IP addres as other users that use the same VPN.
-- Tie the sessionID to certain HTTP Headers passed by the client. This is also not bullet proof since the attacker can replicate the HTTP headers your client sends.
+- Tie the sessionID to certain HTTP Headers passed by the client.  </br>
+   This is also not bullet proof since the attacker can replicate the HTTP headers your client sends.
+- Have variable sessionID's </br>
+   If you make sure the sessionID changes with every request made by the client it's harder for the attacker to hijack the session. Unfortunatly this is also not secure enough since it can take a while for a user to send a new request. In the time before a new request an attacker could have already taken over the whole session blocking the victim of further access.
+
+   ![sessionwarning](https://user-images.githubusercontent.com/24454699/56097146-1e90c480-5ee0-11e9-9abf-e955eb4f09b4.png)
+   </br>
 
 ## HTTPS
 
