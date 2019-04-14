@@ -9,7 +9,6 @@ In this guide you will learn to understand potential risks when creating a web a
 - Understand web application security and its importance.
 - Explains how code developers’ mistakes may be exploited to the benefit of the attackers and how to prevent these attacks.
 - Build secure web applications using secure coding practices.
-
 Tools used in this guide
 - VirtualBox
 - 
