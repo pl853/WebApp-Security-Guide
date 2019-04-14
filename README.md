@@ -63,4 +63,13 @@ URL encoding means that you change certain characters found in the URL by encodi
 ### SECURITY CONCERNS: GET/POST REQUESTS
 The origin of all the requests are on the side of the client. This means that an attacker can replace the client (EX. a browser) with something completely different. For example a proxy can be used to manipulate the data sent to the server. They sit between your client (ex. your browser ) and the server. The proxy lets the attacker change the header and data before passing it to the server.</br>
 A situation where this could be usefull for an attacker: </br>
- A user want so send money via a bank transfer. The user wants to send the money to an account with the number 1234. The attacker changes this account number to his own account number, 4321. When the user presses send  the money will be send to account 4321 instead of account 1234.  
+A user want so send money via a bank transfer. The user wants to send the money to an account with the number 1234. The attacker changes this account number to his own account number, 4321. When the user presses send  the money will be send to account 4321 instead of account 1234.  
+
+## REFERER HEADER 
+On a request the referer header contains the url  of the website  where the document is located. This is also the case when you have an image on your website that is from another website. (in the image below you can see an example of this) </br>
+![urlheader](https://user-images.githubusercontent.com/24454699/56095993-ebdfcf80-5ed1-11e9-942d-b6e8ec2b6705.png)
+</br>
+In the image above the the image used is from the website : http://www.site.example/index.html. This meanse that you use a snippit (small part) of the html code from that website. It's the same for the link below the image. 
+
+### SECURITY CONCERN: REFERER HEADER
+
