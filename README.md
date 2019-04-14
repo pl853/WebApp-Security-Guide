@@ -54,7 +54,13 @@ In this request the clients sends information that changes the information curre
 </br>
 
 It's basicly the same as a GET request only in this case the method token is POST. You can also see that the content-type is an encoded form. The content-lenght is again the amoubtn of bytes posted by the request. In this case a user tries to login using the username jdoe and the password BritneySpears. This can be seen in the last line.</br>
+
 URL encoding means that you change certain characters found in the URL by encoding them using a % sign followed by tho hexadecimal digits. (see image below)</br>
 
 ![encoded](https://user-images.githubusercontent.com/24454699/56095603-0617ae80-5ece-11e9-8e11-f91f98a9946d.png)
 </br>
+
+### SECURITY CONCERNS: GET/POST REQUESTS
+The origin of all the requests are on the side of the client. This means that an attacker can replace the client (EX. a browser) with something completely different. For example a proxy can be used to manipulate the data sent to the server. They sit between your client (ex. your browser ) and the server. The proxy lets the attacker change the header and data before passing it to the server.</br>
+A situation where this could be usefull for an attacker: </br>
+ A user want so send money via a bank transfer. The user wants to send the money to an account with the number 1234. The attacker changes this account number to his own account number, 4321. When the user presses send  the money will be send to account 4321 instead of account 1234.  
