@@ -14,8 +14,8 @@ In this guide you will learn to understand potential risks when creating a web a
 - SECURITY CONCERNS : GET/POST REQUESTS
 - REFERER HEADER
 - SECURITY CONCERNS : REFERER HEADER
-- CHANGING
-- SECURITY CONCERNS : CHANGING
+- CACHING
+- SECURITY CONCERNS : CACHING
 - COOKIES
 - SECURITY CONCERN: COOKIES
 - SESSIONS
@@ -132,7 +132,13 @@ HTTP is a stateless protocol. This means that there are no connections to previo
 An example of a cookie is: On google search the user can set the amount of results returned by a google search. The cookie makes sure the amount set by the user is remember each time the user does a search on google.</br>
 
 The HTTP header is used for both setting and returning the cookies. When the server want the client to remember a cookie it passes a Set-Cookie Header in the response. The image below is an example of a Set-Cookie Header. </br>
+
 ![set_cookie_header](https://user-images.githubusercontent.com/24454699/56096540-14b79300-5ed9-11e9-8a07-1c79ca99142e.png)
+</br>
+
+The cookie is then returned using something called the cookie header. (see image below)</br>
+
+![cookieheader](https://user-images.githubusercontent.com/24454699/56096566-7415a300-5ed9-11e9-8cfd-22d7d749cfac.png)
 </br>
 
 ### SECURITY CONCERN: COOKIES
