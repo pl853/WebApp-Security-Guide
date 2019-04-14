@@ -27,6 +27,7 @@ The browser is always the initiating party and the server nervel calls back. Thi
 
 The HTTP is line oriented which means that the communication takes place using strings of characters which are separated by carriage return (ASCII 13) and line feded (ASCII 10).
 
+## GET/POST REQUESTS 
 There are 2 different types of requests that can be send by the client.
 - GET </br>
   In this request the client asks for information. With the GET request the browser is free to resent the request, for example, this happends when the user presses the back button on a website. (this is not suitable with for example, money transfers because this will resend the transfer each time the back button is pressed) In a GET request the parrameters of the request are encoded in the URL. In the image below you can find an example of the GET request. </br>
