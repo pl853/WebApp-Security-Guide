@@ -18,4 +18,6 @@ There are three specifications that are central to the web:
 - HTTP (HyperText Tranfer Protocol)
 
 HTTP
-In the image below you can see a represantation of how you computer connects to a server. 
+In the image below you can see a represantation of how you computer connects to a server.</br>
+![client-server](https://user-images.githubusercontent.com/24454699/56094773-b2a16280-5ec5-11e9-8373-ca946d15258f.png)
+
