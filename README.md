@@ -255,6 +255,22 @@ HTTPS doesn't always prevent the attacker from succeding when performing a MITM 
 ## SECURITY LAB 1
 
 ## PASSING DATA IN SUBSYSTEMS
+When using dynamic webapplications data is passed to one ore more subsystems. A few examples of this subsystems are:
+- SQL databases
+- Operating Systems
+- Libraries
+- Shell command interpreters
+- Xpath handlers
+- XML documents
+- Legacy Systems
+- User's browser
+
+The way the communication between the application and the subsystems takes place is by building strings containing control information and data. But what data is passed?
+The subsystems contain parser which decode incoming strings character by character, and then decides what to do based on what they read. The strings could represent names, addresses, passwords, webpage's ... just about everything. </br>
+A visual representation of this can be found in the image below. </br>
+
+![subcomm](https://user-images.githubusercontent.com/24454699/56097838-f9548400-5ee8-11e9-96ce-c3211ca5494a.png)
+</br>
 
 ### INTRODUCTION 
 
