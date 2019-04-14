@@ -269,7 +269,7 @@ The way the communication between the application and the subsystems takes place
 The subsystems contain parser which decode incoming strings character by character, and then decides what to do based on what they read. The strings could represent names, addresses, passwords, webpage's ... just about everything. </br>
 A visual representation of this can be found in the image below. </br>
 
-![subcomm](https://user-images.githubusercontent.com/24454699/56097838-f9548400-5ee8-11e9-96ce-c3211ca5494a.png)
+![commsub](https://user-images.githubusercontent.com/24454699/56097894-a5966a80-5ee9-11e9-8a00-488f899f5193.png)
 </br>
 
 ### INTRODUCTION 
