@@ -142,10 +142,18 @@ The cookie is then returned using something called the cookie header. (see image
 </br>
 
 ### SECURITY CONCERN: COOKIES
+Using cookies comes in very handy. There are some security concerns it brings with them. The concerns are as follows:
+- Cookies may be limited in size, this means that space consuming states cannot be safely represented using cookies.
+- Cookies are handled on the client-side, as we know right know client-side stuff can be manipulated by users with bad intentions. 
+
+Solving these concerns can be done by storing the cookie information on the server side.
 
 ## SESSIONS
+Session are a collection of variables that make up a state. They are located on the server-side. To make sure the session is associated with the correct client a session ID is passed on each request to the server. So the session ID uniquely identifies with one session object on the server. </br>
 
 ### SESSION HIJACKING
+These days a lot of websites use session based login. This means a session is initiated when the user has given a valid username and password. But what if someone gets access to the session ID of the user thats logged in? </br>
+In this case the attacker would not need the password of the victim since the session ID works as a temporarily replacement for the password. 
 
 ### PREVENT SESSION HIJACKING
 
