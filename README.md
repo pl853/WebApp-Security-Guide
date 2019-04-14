@@ -29,7 +29,7 @@ The HTTP is line oriented which means that the communication takes place using s
 
 ## GET/POST REQUESTS 
 There are 2 different types of requests that can be send by the client.
-- GET </br>
+### GET REQUESTS
   In this request the client asks for information. With the GET request the browser is free to resent the request, for example, this happends when the user presses the back button on a website. (this is not suitable with for example, money transfers because this will resend the transfer each time the back button is pressed) In a GET request the parrameters of the request are encoded in the URL. In the image below you can find an example of the GET request. </br>
 
   ![get_req](https://user-images.githubusercontent.com/24454699/56095124-1ed19580-5ec9-11e9-9224-5692be6ffa91.png)
@@ -48,6 +48,5 @@ There are 2 different types of requests that can be send by the client.
   - The lines after the status lines (encirkeld in red) are calle the Request-header lines. In these lines you can find the content length. The value (in this case 84) represents the amount of bytes that are in the requested content.
   - The lines below that (encirkeld in blue) is the content that is requested. This is written in HTML.
 
-- POST
-
+### POST  REQUESTS
 
