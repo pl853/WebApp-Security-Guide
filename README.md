@@ -34,6 +34,7 @@ There are 2 different types of requests that can be send by the client.
 
   ![get_req](https://user-images.githubusercontent.com/24454699/56095124-1ed19580-5ec9-11e9-9224-5692be6ffa91.png)
 </br>
+
   The following can be said about this image: 
   - The first line shows the Request-line. In the request-lin the GET is called the method token. The HTTP is the request URI and the 1.0 is the HTTP-version identifier.
   - The lines below the request-line are the Request-header lines.
