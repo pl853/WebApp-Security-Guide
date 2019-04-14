@@ -79,7 +79,12 @@ The term Caching refers to temporarily storing documents on the client or server
 - Local cache </br>
   This is manged by the client (your browser). When the client sends a request for a type of document it saves the document on your disk. When you go to the document (the page in this case) again the loading time will be much lower because it can get the document from your local storage instead of a remote server.
 - Shared cache </br>
-   This cache is typically a server in the local network. If one user reads an online newspaper, and another user tries to access the same newspaper the second user will get a local copy because it was already requested by the first user. 
+   This cache is typically a server in the local network. If one user reads an online newspaper, and another user tries to access the same newspaper the second user will get a local copy because it was already requested by the first user.  </br>
+
+   The image below shows the 2 types of caches: </br>
+
+![clientservercache](https://user-images.githubusercontent.com/24454699/56096371-c30e0900-5ed6-11e9-87aa-d1db6e25261c.png)
+</br>
 
 ### SECURITY CONCERN: CACHING
 Some documents should not be cached. A few examples of those documents are:
