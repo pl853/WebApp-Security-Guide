@@ -25,6 +25,7 @@ In this guide you will learn to understand potential risks when creating a web a
 - PACKET SNIFFING
 - PREVENT PACKET SNIFFING
 - MITM (MAN IN THE MIDDLE ATTACK)
+- PREVENT MITM ATTACKS
 - CBM (CERTIFICATE BASES MUTUAL) AUTHENTICATION
 - SECURITY LAB 1
 - PASSING DATA IN SUBSYSTEMS
@@ -222,12 +223,28 @@ Take for example a situation where a user connects to a bank server:
 - The attacker tricks the user's computer in thinking that the attackers computer is the bank's server.
 - The attacker than forwards all the communication to the banks server. 
 - From the victim's point it looks like he's connected to the bank server but in reality all the communication is send trought the attackers computer.
-- This enables the attacker to intercept all the communication made between the 2 parties. (bank and victim)
+- This enables the attacker to intercept, read and modify all the communication made between the 2 parties. (bank and victim)
 
 A visual represantation of a MITM attack is shown in the image below:
 
 ![mitm](https://user-images.githubusercontent.com/24454699/56097508-bb556100-5ee4-11e9-8524-a7bdd3e27197.png)
 </br>
+
+### PREVENT MITM ATTACKS
+When you make use of a HTTPS connecting the client always verifies something called the server's certificate. This certificate is an unique identifier of the webserver. The image below shows a certificate</br>
+
+![certificate](https://user-images.githubusercontent.com/24454699/56097648-cf01c700-5ee6-11e9-867d-5a570fc18c93.png)
+</br>
+
+HTTPS doesn't always prevent the attacker from succeding when performing a MITM attack, this can be caused by a few factors:
+- Ignorant users
+- Fake websites with similar domains. (the html of a website can be easily replicated by the attacker and the domain name can be spoofed in something that looks like the domain the victim tries to access)
+- Certification authorities mistakes
+- Bugs in software
+
+
+
+
 
 ### CBM (CERTIFICATE BASES MUTUAL) AUTHENTICATION
 
