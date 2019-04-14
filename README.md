@@ -23,6 +23,7 @@ In this guide you will learn to understand potential risks when creating a web a
 - PREVENT SESSION HIJACKING
 - HTTPS
 - PACKET SNIFFING
+- PREVENT PACKET SNIFFING
 - MITM (MAN IN THE MIDDLE ATTACK)
 - CBM (CERTIFICATE BASES MUTUAL) AUTHENTICATION
 - SECURITY LAB 1
@@ -195,13 +196,25 @@ The encrypted channel can be provided by the following protocols:
 - Secure Socket Layer (SSL)
 - Transport Layer Security (TLS)
 
-The encryption protocols only protect the connection between the client and server. The attacker can still attack both the client and the server, but he will have a hard time attaking the communication between those two. </br>
+CAUTION: The encryption protocols only protect the connection between the client and server. The attacker can still attack both the client and the server, but he will have a hard time attaking the communication between those two. </br>
 The image below is a visual represantation of the difference between a HTTP (on top of the image) and a HTTPS (at the bottom of the image) connection.
 
 ![secureinconnection](https://user-images.githubusercontent.com/24454699/56097339-36694800-5ee2-11e9-96c4-7ad2aa4ddd8d.png)
 </br>
 
 ### PACKET SNIFFING
+Packet sniffing is a way to attach the networking transport rather than the client. First you need to understand what a packet is. A packet is a unit of data made into a single package that travels along a given network path. Data packets are used in Internet Protocol (IP) transmissions for data that navigates the Web, and in other kinds of networks. </br>
+The image below shows a visual represantation of an attacker sniffing packets transfered by the victim.
+
+![packetsnif](https://user-images.githubusercontent.com/24454699/56097386-d030f500-5ee2-11e9-89be-a0202b1e4bba.png)
+</br>
+
+### PREVENT PACKET SNIFFING
+To prevent data being stolen when your packets are being sniffed you should make use of encrypted connections (HTTPS).  This won't prevent the attacker from sniffing your packets but all the content of the sniffed packets are random strings of data.</br>
+A visual represantation of what happends when packets are being sniffed over an insecure (at the top of the image) and  a secure (at the bottom of the image) connection is shown in the image below.
+
+![securesnif](https://user-images.githubusercontent.com/24454699/56097452-be038680-5ee3-11e9-8158-87e723a7fc4d.png)
+</br>
 
 ### MITM (MAN IN THE MIDDLE ATTACK)
 
