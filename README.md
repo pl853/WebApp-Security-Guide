@@ -568,5 +568,27 @@ But what is the best way to perform validation input...? There are multiple step
 ### REGULAR EXSPRESSIONS 
 The art of checking known input EX. email 
 
-examples of input functions 
+### WHITELISTING VS BLACKLISTING
+
+### HANDLING INVALID INPUT
+
+## CROSS SITE SCRIPTING (XSS)
+
+### XSS BASED SESSION HIJACKING
+
+### TEXT MODIFICATION 
+
+### SECURITY CONCERNS: XSS
+
+### PREVENTING XSS
+
+## WEB TROJANS
+
+### SECURITY CONCERNS: WEB TROJANS
+
+### PREVENTING: WEB TROJANS
+
+
+
+
  
