@@ -576,12 +576,31 @@ But what is the best way to perform validation input...? There are multiple step
 - Perform autherization tests
 - Automate input validation 
 
-### REGULAR EXSPRESSIONS 
-The art of checking known input EX. email 
-
 ### WHITELISTING VS BLACKLISTING
+When filtering data there are three things we look at:
+- Characters of a combination of characters to REMOVE something.
+- Characters of a combination of characters to REWRITE something.
+- Characters of a combination of characters to DETECT something.
+
+The filtering can be done in two ways:
+- Identify BAD data and filtering it. </br>
+  This approach is the most intuitive, because we know what data is bad so we can look for it. This procces is called blacklisting since we start with a list of things we do not like.
+- Identify GOOD data and filter the rest. </br>
+  In this approach we start with a list of things we consider harmless. Whenever we come accross something that is not on the list we assume it may be harmfull so we filter it. This process is called whitelisting since we start with a list of data that we presume as good data.
+
+The whitelisting approach is considered best in the security context. It implements something called deny by default. see image below </br>
+
+![denybydefault](https://user-images.githubusercontent.com/24454699/56157840-1011de00-5fb0-11e9-85ac-a1dff432417f.png)
+</br>
 
 ### HANDLING INVALID INPUT
+Before we start of with this section we should recap some of the previous learning material. see image below </br>
+
+![recapuserinput](https://user-images.githubusercontent.com/24454699/56157951-49e2e480-5fb0-11e9-8acc-6d5fb9f6cc3a.png)
+</br>
+
+
+
 
 ## CROSS SITE SCRIPTING (XSS)
 
