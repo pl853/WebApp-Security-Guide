@@ -429,15 +429,32 @@ There are certain steps that need to be taken to prevent a shell command injecti
   ![sendmailheader](https://user-images.githubusercontent.com/24454699/56138917-5dc62080-5f87-11e9-98bb-461d5f0c0727.png)
   </br>
 - Managing without the shell. (not making use of the shell) 
-
-
-
+  Why should we use the shell at all? All the features provided by the shell can be programmed into your application. Take for example the sendmail program, Someone that knows how STMP (Simpel Mail Transfer Protocol) works should be able to write the required code.
 
 ## USER INPUT
-
-### INTRODUCTION
+Most webapplications accept input from the client. The input could decide what to do next, be stored somewhere, be included in the webpage, emailed to someone.
+As mentioned above accepting wrong input may result in the program making wrong decisions. To make sure our application doenst accept wrong input me should use input validation.
 
 ## INPUT
+URL paramaters are considered as input. see image below </br>
+
+![urlinput](https://user-images.githubusercontent.com/24454699/56139692-e5605f00-5f88-11e9-8b3d-c68e9d06bf5b.png)
+</br>
+
+Text fields and Text areas are also a form of input. This can be seen in GET and POST requests. see image below </br>
+
+![postinput](https://user-images.githubusercontent.com/24454699/56139821-2789a080-5f89-11e9-9aa1-0e4f693dd6d3.png)
+</br>
+
+These types of inputs are know as user-generated input.
+
+Other kinds of input are considered as not "real" by quite a few developers since they are predefined values. (a list of input values dictated by the application instead of the user) see images below. </br>
+
+![unreal1](https://user-images.githubusercontent.com/24454699/56140015-8c44fb00-5f89-11e9-9d22-0d889b97bc6f.png)
+
+![unreal2](https://user-images.githubusercontent.com/24454699/56140037-9961ea00-5f89-11e9-9c10-3aa9ee74ef04.png)
+
+
 
 ### SECURITY CONCERNS: INPUT
 
