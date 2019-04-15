@@ -41,6 +41,17 @@ In this guide you will learn to understand potential risks when creating a web a
 - INPUT
 - SECURITY CONCERNS: INPUT
 - VALIDATING INPUT
+{somemore}
+- WHITELISTING VS BLACKLISTING
+- HANDLING INVALID INPUT
+- CROSS SITE SCRIPTING (XSS)
+- XSS BASED SESSION HIJACKING
+- TEXT MODIFICATION 
+- SECURITY CONCERNS: XSS
+- PREVENTING XSS
+- WEB TROJANS
+- SECURITY CONCERNS: WEB TROJANS
+- PREVENTING: WEB TROJANS
 
 Tools used in this guide </br>
 - VirtualBox, This tool is used to setup a secure test inveronment
