@@ -325,7 +325,7 @@ So what is the problem in the example above? The problem is not the metacharacht
 The real problem is: The attacker is allowed to make the SQL parser switch context. (reading plain text to inserting queries).
 
 Again, metacharachters are not the problem. The way the SQL parser reads them is. To fix this we can do 2 things:
-- Neutralize SQL metacharachters. (make them lose their meaning)
+- Neutralize SQL metacharachters. (make them lose their meaning)</br>
   To do this you first need to read the database server documentation to see what characters need special treatment. The reason for this is because some databases add their own non-standard metacharachters. To Neutralize the metacharachter we need to "escape" them by duplicating the character. </br>
   For example:
   - In PostgreSQL and MySQL, string constants may contain backslash escape (/) sequences like in C and Java.</br>
@@ -352,7 +352,7 @@ Again, metacharachters are not the problem. The way the SQL parser reads them is
   </br>
   Here you can see that the backslash (/) is also escaped by doubling it. (//) </br>
   The problem with this solution is that you have to repeat this for every metacharachter that has a special meaning in the database server.
-- Another solution is using prepared statements where no metacharachters are used. 
+- Another solution is using prepared statements where no metacharachters are used.  </br>
   In this solutiong we dont handle the metacharachters ourselves but we make use of prepared statements. In this method query paramaters are passed separately from the SQL statement. In this way there are no metacharachters. (see image below)</br>
 
   ![solution3](https://user-images.githubusercontent.com/24454699/56130628-f43d1680-5f74-11e9-875d-7a3417690fc8.png)
@@ -360,7 +360,24 @@ Again, metacharachters are not the problem. The way the SQL parser reads them is
   The benefits of this method are as follows:
   - We dont need to remember all that metacharachter handling.
   - prepared statements execute faster than plain statements becuase they get parsed only once by the database server.
+
 ## SHELL COMMAND INJECTIONS
+Programs writing in web programming Languages,often rely on running external commands to perform tasks. When such a program runs an external command the interpreter will leave the program which runs and executes a command on the operating systems shell. (examples of operating shells are :sh,bash,csh,tshc). </br>
+Shell understand a large set of metacharachters, and as we know this causes major security problems. Some security problems are:
+- Command substitution </br>
+  In the image below we execute a shell command that checks if somebody is logged in to one of the machines at for example an university.</br>
+  
+  ![attackshelsub](https://user-images.githubusercontent.com/24454699/56131343-af19e400-5f76-11e9-9783-25e1b8b6f62d.png)
+  In the script we make use of the command finger which returns the necessary information. </br>
+  If we use the line qwe; rm -rf / as input for the username the final command will become (see image below) </br>
+
+  ![fingercommmand](https://user-images.githubusercontent.com/24454699/56131489-19328900-5f77-11e9-8acc-294f23ff62d7.png)
+  </br>
+
+  This will run a command that deletes the whole file system!
+- Piping the commands </br>
+
+
 
 ### PREVENT SHELL COMMAND INJECTIONS
 
