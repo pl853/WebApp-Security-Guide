@@ -316,10 +316,16 @@ If the attacker happends to know that there is a user named john', he fills in j
 
 Now the attacker is logged in as user john' without needing his password. The reason for this is because the metacharachter (' in this case), disables the test for matching the password.
 ### PREVENT SQL INJECTION
+So what is the problem in the example above? The problem is not the metacharachter, its all about contexts and parsing. In the image below everthing is OK up to the first singel quote, because it switches to parsing a string constant. </br>
+
+![stringconstant](https://user-images.githubusercontent.com/24454699/56128398-061bbb00-5f6f-11e9-8e18-06f3a34fdcd2.png)
+</br>
+
+The real problem is: The attacker is allowed to make the SQL parser switch context. (reading plain text to inserting queries).
 
 ## SHELL COMMAND INJECTIONS
 
-### PREVENT SQL INJECTIONS
+### PREVENT SHELL COMMAND INJECTIONS
 
 ## USER INPUT
 
