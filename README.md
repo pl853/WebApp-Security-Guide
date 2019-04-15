@@ -547,4 +547,26 @@ Take for example the VISA card number format. The input validation would look so
 The main goal of input validation is that we dont have to avoid metacharachters like in SQL Injections and Cross site scripting but that our application works with data that has the expected format. (recap SQL injections if needed Cross site scripting will be explained later in this guide). </br>
 The reason for not avoiding metacharachters, is because we somethimes need them. For example in the name O'Conner and when < or > signs are needed on a math discussion forum.
 
+But what is the best way to perform validation input...? There are multiple steps you can follow to perform input validation:
+- First Identify All the input on your webapplication. Make sure to inlcude, hidden fields, option values, cookies and other stuff comming from HTTP headers.
+- Create validation functions, Ex. isValidEmailAddress, isValidCostumerID that return boolean values (true or false). In the case of a server-generated input, parallel function should be used, Ex. assertValidEmailAddress and asserValidCostumerID to make sure that the execution is aborted if the input is invalid. Two examples of functions that validate inputs can be found below. </br>
+
+![validateex1](https://user-images.githubusercontent.com/24454699/56155830-587acd00-5fab-11e9-99ea-37ef8b7d3a09.png)
+</br>
+
+![validateex2](https://user-images.githubusercontent.com/24454699/56155860-6892ac80-5fab-11e9-89cc-4e6f8964486b.png)
+</brr>
+
+
+- Check the range of an input. For example when there is an input field for the amount of items in a webstore. This should be numeric but not negative. 
+- Check the lenght of an input. This could be usefull when you have a domain type like VISA card number. This input should always have a set range because the lenght of a VISA card number doesn't differ. The lenght of an input can also be set in a database table by specifying an upper lenght limit for the input field.
+- Check for precense of NULL-Bytes
+- Perform the input validation before doing anything else.
+- Perform autherization tests
+- Automate input validation 
+
+### REGULAR EXSPRESSIONS 
+The art of checking known input EX. email 
+
+examples of input functions 
  
