@@ -272,13 +272,18 @@ A visual representation of this can be found in the image below. </br>
 ![commsub](https://user-images.githubusercontent.com/24454699/56097894-a5966a80-5ee9-11e9-8a00-488f899f5193.png)
 </br>
 
-### INTRODUCTION 
-
 ### METACHARACTERS
+When we use special characters as input those characters won't be treated the same. There is a possiblity the system reads this character as a metacharachter. </br>
+These characters won't always be treated asa plain text. They can become control characters. metacharachters are not a threat by themselves. </br>
 
 ### SECURITY CONCERNS: PASSING DATA IN SUBSYSTEMS
+They become a threat when developers think they are passing them as pure data but that data makes the subsystem do something unexpected.</br>
+If the subsystem reads a metacharachter it may stop reading pure data and start reading commands entered by the attacker.
 
 ## SQL INJECTIONS
+One of these attacks where an attacker makes use of metacharachters is called a sql injection. We all know the syntax of SQL and we also know that metacharachters are involved in writing queries. </br>
+In SQL Injections,an attacker is able to modify or add queries that are sent to a database by playing with input to the webapplication. The attack works when a program builds queries based on strings from the client, and passes them to the database server without handling characters that have special meaning to the server / subsystem.
+
 
 ### PREVENT SQL INJECTION
 
