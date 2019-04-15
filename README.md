@@ -454,8 +454,25 @@ Other kinds of input are considered as not "real" by quite a few developers sinc
 
 ![unreal2](https://user-images.githubusercontent.com/24454699/56140037-9961ea00-5f89-11e9-9c10-3aa9ee74ef04.png)
 
+The following types of inputs are predefined:
+- checkboxes
+- hidden fields
+- dropdown
 
+These inputs can be called server-generated input, even if they come from the client, as the values are dictated by our application. The UI doenst give the user the option to change these values.
 
 ### SECURITY CONCERNS: INPUT
+It may seem it's secure to use predefined input values, but its not that secure since the attacker can modify the values before the even reach the victim. </br>
+For example (see image below) </br>
+
+
+![predefinedinput](https://user-images.githubusercontent.com/24454699/56140443-75eb6f00-5f8a-11e9-9297-97eda6f8891a.png)
+</br>
+
+Modifying the HTML can be done by reproducing the following steps:
+- Use the browser to save the HTML to a file
+- Open the file in a text editor
+- Make the intended changes
+- If the action attribute of the form is 
 
 ## VALIDATING INPUT
