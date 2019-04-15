@@ -418,6 +418,16 @@ There are certain steps that need to be taken to prevent a shell command injecti
   Escaping metacharachters is hard because we are not always sure what kind of shell is being used.
   
 - Avoiding user input in the command arguments.
+  If we could avoid passing user data on the command line, it becomes a lot simpler to prevent shell command Injections. </br>
+  Some programs are forced to read data from files or from the input stream.  Take the image below as an example </br>
+
+  ![nouserinput](https://user-images.githubusercontent.com/24454699/56138751-0627b500-5f87-11e9-8092-93c4961c746d.png)
+  </br>
+
+  You cold solve this by using the -t option in sendmail. The option makes sure the recipient address is taken from the mail headers. see image below </br>
+
+  ![sendmailheader](https://user-images.githubusercontent.com/24454699/56138917-5dc62080-5f87-11e9-98bb-461d5f0c0727.png)
+  </br>
 - Managing without the shell. (not making use of the shell) 
 
 
