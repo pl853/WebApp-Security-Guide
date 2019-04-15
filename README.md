@@ -324,7 +324,10 @@ So what is the problem in the example above? The problem is not the metacharacht
 
 The real problem is: The attacker is allowed to make the SQL parser switch context. (reading plain text to inserting queries).
 
-To solution 
+Again, metacharachters are not the problem. The way the SQL parser reads them is. To fix this we can do 2 things:
+- Neutralize SQL metacharachters. (make them lose their meaning)
+- Using prepared statements where no metacharachters are used.
+
 ## SHELL COMMAND INJECTIONS
 
 ### PREVENT SHELL COMMAND INJECTIONS
