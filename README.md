@@ -346,9 +346,20 @@ Again, metacharachters are not the problem. The way the SQL parser reads them is
   </br>
 
   The database did not do anything to the backslash (/), it only doubled the singel quote ('). Now we are back to the start and all the users are deleted in this case.</br>
-  To solve this we apply the method explained below.
-- Using prepared statements where no metacharachters are used.
+  To solve this we can apply the following sollution to the code. (see image below) </br>
 
+  ![solution2](https://user-images.githubusercontent.com/24454699/56130441-66612b80-5f74-11e9-828a-26cd356698c4.png)
+  </br>
+  Here you can see that the backslash (/) is also escaped by doubling it. (//) </br>
+  The problem with this solution is that you have to repeat this for every metacharachter that has a special meaning in the database server.
+- Another solution is using prepared statements where no metacharachters are used. 
+  In this solutiong we dont handle the metacharachters ourselves but we make use of prepared statements. In this method query paramaters are passed separately from the SQL statement. In this way there are no metacharachters. (see image below)</br>
+
+  ![solution3](https://user-images.githubusercontent.com/24454699/56130628-f43d1680-5f74-11e9-875d-7a3417690fc8.png)
+  </br>
+  The benefits of this method are as follows:
+  - We dont need to remember all that metacharachter handling.
+  - prepared statements execute faster than plain statements becuase they get parsed only once by the database server.
 ## SHELL COMMAND INJECTIONS
 
 ### PREVENT SHELL COMMAND INJECTIONS
