@@ -312,7 +312,7 @@ In the picture above the character encirkeld in red is the metacharachter that m
 If the attacker happends to know that there is a user named john', he fills in john' as user name. This will cause the system to fill in the sql query as follows : </br>
 
 
-![sqlattack2](https://user-images.githubusercontent.com/24454699/56126894-8809e500-5f6b-11e9-83d3-63b47177ec12.png)
+![sqlattack2](https://user-images.githubusercontent.com/24454699/56128614-b38ece80-5f6f-11e9-8a4d-097af70285ee.png)
 </br>
 
 Now the attacker is logged in as user john' without needing his password. The reason for this is because the metacharachter (' in this case), disables the test for matching the password.
