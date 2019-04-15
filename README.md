@@ -520,7 +520,31 @@ The language string is taken from the accept-language HTTP headerm which comes f
 ![recapinput](https://user-images.githubusercontent.com/24454699/56151896-d6d27180-5fa1-11e9-9502-41ba485f50e3.png)
 </br>
 
-
-
 ## VALIDATING INPUT
+Input validation is the process of determining whether an input paramater is valid, according to the rules that we set in our application.
+Take for example an input field where the user has to enter his email address. When validating the input given by the user we check that the format of the input matches the format of an email address. see image below </br>
 
+![emailformat](https://user-images.githubusercontent.com/24454699/56152384-0c2b8f00-5fa3-11e9-956e-30b4b65656fe.png)
+</br>
+
+We call formats like an email format DOMAIN TYPES. More domain types could be:
+- Account
+- Country code
+- Costumer ID
+- Date
+- File name
+- Payment amount
+- Phone number
+- URL
+- VISA card number
+
+Take for example the VISA card number format. The input validation would look something like in the image below. </br>
+
+![validatevisa](https://user-images.githubusercontent.com/24454699/56152850-52cdb900-5fa4-11e9-8a39-346bd5af54d6.png)
+</br>
+
+
+The main goal of input validation is that we dont have to avoid metacharachters like in SQL Injections and Cross site scripting but that our application works with data that has the expected format. (recap SQL injections if needed Cross site scripting will be explained later in this guide). </br>
+The reason for not avoiding metacharachters, is because we somethimes need them. For example in the name O'Conner and when < or > signs are needed on a math discussion forum.
+
+ 
