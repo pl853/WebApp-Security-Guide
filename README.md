@@ -326,6 +326,27 @@ The real problem is: The attacker is allowed to make the SQL parser switch conte
 
 Again, metacharachters are not the problem. The way the SQL parser reads them is. To fix this we can do 2 things:
 - Neutralize SQL metacharachters. (make them lose their meaning)
+  To do this you first need to read the database server documentation to see what characters need special treatment. The reason for this is because some databases add their own non-standard metacharachters. To Neutralize the metacharachter we need to "escape" them by duplicating the character. </br>
+  For example:
+  - In PostgreSQL and MySQL, string constants may contain backslash escape (/) sequences like in C and Java.</br>
+  Lets take the example in the image below. </br>
+
+  ![sqlattack3](https://user-images.githubusercontent.com/24454699/56129775-93acda00-5f72-11e9-853d-7e968db50c77.png)
+  </br>
+  Here the code accepts a username from a form, and looks up the matching user in the database. The username is read from the POSTed data. </br>
+  Then every quote character is escaped by doubling the character so the sql parser reads it as: (see image below)</br>
+  ![sqlinput](https://user-images.githubusercontent.com/24454699/56129956-251c4c00-5f73-11e9-8677-b9a28cc57a0e.png)
+</br>
+  which is a SQL string constant. </br>
+  Then it's included in the query.
+
+  It's more secure this way but it's not bullet proof. (see image below) </br>
+
+  ![attackclever](https://user-images.githubusercontent.com/24454699/56130034-59900800-5f73-11e9-9f77-c70ab8eef0fc.png)
+  </br>
+
+  The database did not do anything to the backslash (/), it only doubled the singel quote ('). Now we are back to the start and all the users are deleted in this case.</br>
+  To solve this we apply the method explained below.
 - Using prepared statements where no metacharachters are used.
 
 ## SHELL COMMAND INJECTIONS
