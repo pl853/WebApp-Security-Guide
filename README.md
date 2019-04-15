@@ -282,9 +282,39 @@ If the subsystem reads a metacharachter it may stop reading pure data and start 
 
 ## SQL INJECTIONS
 One of these attacks where an attacker makes use of metacharachters is called a sql injection. We all know the syntax of SQL and we also know that metacharachters are involved in writing queries. </br>
-In SQL Injections,an attacker is able to modify or add queries that are sent to a database by playing with input to the webapplication. The attack works when a program builds queries based on strings from the client, and passes them to the database server without handling characters that have special meaning to the server / subsystem.
+In SQL Injections,an attacker is able to modify or add queries that are sent to a database by playing with input to the webapplication. The attack works when a program builds queries based on strings from the client, and passes them to the database server without handling characters that have special meaning to the server / subsystem. </br>
+In the image below you can find a visual represantation of a SQL injection. </br>
 
+![sqlinj](https://user-images.githubusercontent.com/24454699/56126074-dc13ca00-5f69-11e9-8437-49b43692d776.png)
+</br>
 
+Below we will describe an example of a sql injection</br>
+In this example we will use a situation where a user want to register to a website that uses a SQL database as backend. The java code in the application is as follows: </br>
+
+![sqlinjec1](https://user-images.githubusercontent.com/24454699/56126291-5b090280-5f6a-11e9-87fe-4553300e230c.png)
+</br>
+
+Then there are 2 uses that want to register. The first user is : </br>
+
+![sql1](https://user-images.githubusercontent.com/24454699/56126343-7d028500-5f6a-11e9-9c20-8fb914c8124b.png)
+</br>
+
+And the second user : </br>
+
+![sql2](https://user-images.githubusercontent.com/24454699/56126413-a8856f80-5f6a-11e9-89c6-ca793f076210.png)
+</br>
+
+In the picture above the character encirkeld in red is the metacharachter that makes the system do something unexpected. Take for example a login form in a web application which uses the following code to check the input credentials. (image below) </br>
+
+![sqlattack](https://user-images.githubusercontent.com/24454699/56126784-39f4e180-5f6b-11e9-9933-e6ba9b639a0c.png)
+</br>
+
+If the attacker happends to know that there is a user named john', he fills in john' as user name. This will cause the system to fill in the sql query as follows : </br>
+
+![sqlattack2](https://user-images.githubusercontent.com/24454699/56126894-8809e500-5f6b-11e9-83d3-63b47177ec12.png)
+</br>
+
+Now the attacker is logged in as user john' without needing his password. The reason for this is because the metacharachter (' in this case), disables the test for matching the password.
 ### PREVENT SQL INJECTION
 
 ## SHELL COMMAND INJECTIONS
