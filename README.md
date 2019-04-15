@@ -462,7 +462,7 @@ The following types of inputs are predefined:
 These inputs can be called server-generated input, even if they come from the client, as the values are dictated by our application. The UI doenst give the user the option to change these values.
 
 ### SECURITY CONCERNS: INPUT
-It may seem it's secure to use predefined input values, but its not that secure since the attacker can modify the values before the even reach the victim. </br>
+It may seem it's secure to use predefined input values, but its not that secure since the attacker can modify the values before they even reach the victim. </br>
 For example (see image below) </br>
 
 
@@ -473,6 +473,54 @@ Modifying the HTML can be done by reproducing the following steps:
 - Use the browser to save the HTML to a file
 - Open the file in a text editor
 - Make the intended changes
-- If the action attribute of the form is 
+- If the action attribute of the form is relative, modify it to contain a full URL
+- Save the file
+- Open the local file in the browser and submit the form
+
+Some web applications dont pay attention to the difference between a POST and a GET request and accept either of the two. see image below for the differences. </br>
+![differencepostget](https://user-images.githubusercontent.com/24454699/56150470-873e7680-5f9e-11e9-9a79-6d18d3388eda.png)
+</br>
+
+If this is the case the attacker probably doenst even have to go trough the trouble of Modifying the HTML, he will just pick the paramaters from the form and appends them to the URL given in the action attribute, and puts the resulting URL in the URL bar.
+
+
+### SERVER GENERATED FIELDS
+Nothing stops the attacker from making variables/inputs (ex. country, gender and userid) any value he wants them to be. This means the predefined inputs we saw earlier (checkboxes, hidden fields, dropdown), are just as much of an input as the user generated fields. Even HTTP header, including cookies should be treated as textual input. This will be shown in the example below.</br>
+
+In this example we will use international documents for an online payment. </br>
+The payment file is located at the filelocation shown in the image below. </br>
+
+![paymentdocument](https://user-images.githubusercontent.com/24454699/56151015-ca4d1980-5f9f-11e9-86ef-a12ebd3c54eb.png)
+</br>
+
+The IT, encirkeld in red, represents the Language (italian) the victim uses. If the user would like to view the payment documentation he will follow a link to a URL which looks like the URL shown in the image below.</br>
+
+![doclink](https://user-images.githubusercontent.com/24454699/56151182-39c30900-5fa0-11e9-8b52-0b7a908ea8ee.png)
+</br>
+
+The banking software would determine what Language the victim uses based on the local settings (remember the encirkeld IT), and then read the payment file from the correct directory. How this is done is displayed in the image below.</br>
+
+![HTTPheadbank](https://user-images.githubusercontent.com/24454699/56151451-c8378a80-5fa0-11e9-80e0-b1ddf961496f.png)
+</br>
+
+The language string is taken from the accept-language HTTP headerm which comes from the client's request. see image below. </br>
+
+![clientrequestheader](https://user-images.githubusercontent.com/24454699/56151641-38461080-5fa1-11e9-8ece-d58156bc5230.png)'
+</br>
+ 
+ BUT what if the attackers would change the following lines? see image below </br>
+
+ ![wrongline](https://user-images.githubusercontent.com/24454699/56151731-7ba07f00-5fa1-11e9-9251-f89ee921cc5f.png)
+ </br>
+
+ Well in this case the web application will respond with the file mentionend earlier in this guide, /etc/passwd. (the file that includded hashed passwords)
+
+ so lets recap the definition of INPUT: </br>
+
+![recapinput](https://user-images.githubusercontent.com/24454699/56151896-d6d27180-5fa1-11e9-9502-41ba485f50e3.png)
+</br>
+
+
 
 ## VALIDATING INPUT
+
