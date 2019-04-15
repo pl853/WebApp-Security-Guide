@@ -400,9 +400,25 @@ There are certain steps that need to be taken to prevent a shell command injecti
   ![metabash](https://user-images.githubusercontent.com/24454699/56132580-e047e380-5f79-11e9-86f1-cd0764a1ce34.png)
   </br>
 
-  You could solve the problem in the same way as we did with the SQL Injections, by escaping the metacharachters. (recap that if needed)
+  You could solve the problem in the same way as we did with the SQL Injections, by escaping the metacharachters. (recap that if needed)</br>
+  Altough the principle of escaping metacharachter is the same it's done in a different way.
+  - singel quote encapsulation makes sure the shell treats the text as just plain text. If the data contains singel quotes, we can still use single wqoute encapsulation if we split the string on all the single quotes and glue quoted strings togheter using a backslash-escaped single quote. see image below </br>
+  
+  ![doublyquoteshell](https://user-images.githubusercontent.com/24454699/56137164-bd223180-5f83-11e9-839e-d01cd7419526.png)
+  </br>
+
+  - Double quote encapsulation , when using double quote encapsulation all characters except the following lose their special meaning;
+    - $
+    - ` (backtick)
+    - "
+    - \
+  These characters need to be escaped using a backslash /
+
+  - The last solution is to escape every metacharachter by setting a backslash infront of them.
+  Escaping metacharachters is hard because we are not always sure what kind of shell is being used.
+  
 - Avoiding user input in the command arguments.
-- Managing without the shell. (not making use of the shell)
+- Managing without the shell. (not making use of the shell) 
 
 
 
