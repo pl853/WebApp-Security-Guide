@@ -311,6 +311,7 @@ In the picture above the character encirkeld in red is the metacharachter that m
 
 If the attacker happends to know that there is a user named john', he fills in john' as user name. This will cause the system to fill in the sql query as follows : </br>
 
+
 ![sqlattack2](https://user-images.githubusercontent.com/24454699/56126894-8809e500-5f6b-11e9-83d3-63b47177ec12.png)
 </br>
 
@@ -323,6 +324,7 @@ So what is the problem in the example above? The problem is not the metacharacht
 
 The real problem is: The attacker is allowed to make the SQL parser switch context. (reading plain text to inserting queries).
 
+To solution 
 ## SHELL COMMAND INJECTIONS
 
 ### PREVENT SHELL COMMAND INJECTIONS
