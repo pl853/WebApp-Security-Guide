@@ -680,7 +680,7 @@ So on the webpage displayed on the clerks computer it looks like the victim is s
 ![moneyattack](https://user-images.githubusercontent.com/24454699/56232988-9510fc00-6071-11e9-8107-252c010d91a9.png)
 </br>
 
-### THE PROBLEM
+### THE PROBLEM WITH XSS
 Since XSS only works when a web apllication can be tricked into passing HTML (modified by the attacker) to the victim the problem lies, AGIAN, with the metacharachters. In this case the HTML parser in the browser interpets pieces of HTML that the original developer did not intend to send. This was the same case with SQL parsers in SQL injections. (recap if needed) </br>
 
 The image below is another visual representation of cross site scripting. </br>
@@ -721,8 +721,39 @@ HTML encoding is the mapping of certain HTML metacharachters to their character 
 </br>
 
 ## WEB TROJANS
+A Trojan is a computer program tha appears to be a gift, but that actually is a trap. It may look cool but in the end it executes some damaging code. (EX Delete your files)
+Take for example a statistics website that allows users to vote for a new president. The image below shows the code for performing the vote. </br>
 
-### SECURITY CONCERNS: WEB TROJANS
+![voteinput](https://user-images.githubusercontent.com/24454699/56237833-81b75e00-607c-11e9-9020-ee841ab3fe25.png)
+</br>
+
+Since the form uses the GET method, the user is redirected to the URL with the vote he selected. 
+
+In the case a hacker can disguise the link as something cool and then send it to a lot of people. When the people click the link the will vote for the president the attacker wants them to vote for.
+
+Web trojans work with authentication to. For example take the image below. In this case the user is logged in to a banking website. Then when he clicks the malicious link the code in the image will be executed. (the victim sends money to the attacker) </br>
+
+![banktrojan](https://user-images.githubusercontent.com/24454699/56238177-5e40e300-607d-11e9-927a-fe5163c36940.png)
+</br>
+
+For the example in the image above to work the attacker needs to reach the victim while the victim is logged in to the banking site. If the user is not always logged in the attacker has to make sure the victim is signed on to the site before tricking him into opening the malicious HTML. </br>
+To make sure the user is logged in the attacker can do the following:
+- Hope that the victim clicked the remember me option.
+- Hope that the target site is an intranet solution based on domain authentication.
+- Hope that the victim and the website make use of single sign-on solutions (EX. Google login)
+- When the target website is a site where you can add content, the attacker could make a tempting note in the forum asking people to take a look at a link.
+
+For this social engineering is the key.
+
+An example of social engineering is shown in the image below.</br>
+
+![social](https://user-images.githubusercontent.com/24454699/56238698-98f74b00-607e-11e9-9afc-c2ad0653f063.png)
+</br>
+
+In the image above the attacker sends an email to the victim that looks like it came from the bank. The user will probably click the link.
+
+### THE PROBLEM WITH WEB TROJANS
+
 
 ### PREVENTING: WEB TROJANS
 
