@@ -688,6 +688,8 @@ The image below is another visual representation of cross site scripting. </br>
 ![xssvisual](https://user-images.githubusercontent.com/24454699/56233447-a3abe300-6072-11e9-992d-a6b9410cefe8.png)
 </br>
 
+The most obvious XSS occurs when someone inserts a script tag (<scirpt> </script>)
+
 ### PREVENTING XSS
 
 ## WEB TROJANS
