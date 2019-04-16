@@ -614,6 +614,16 @@ We also need to pay to pay attention to metacharachters in this case. A lot of p
 XSS is about tricking the webserver into passing malicious HTLM (scripts), to the user. </br>
 There are multiple reasons for an attacker to perform such an attack:
 - Most of the time its about stealing session information, as we already know the attacker can contact the site on behalf of the victim
+- Another reason for cross site scripting could be to change the content of the web page in order to display false information to the victim. This can also be used to redirect forms so that secret data is posted to the attackers computer. </br>
+
+XSS attacks the user instead of the application itself. The attacks are possible when the application lacks proper output handling.</br>
+
+Take for example an online guest book which lets visitios enter whatever they like. Then the application appends the new text to whatever was before the new input got send.  see image below </br>
+
+![xssex1](https://user-images.githubusercontent.com/24454699/56229583-bf5ebb80-6069-11e9-8602-b4a5c5171828.png)
+</br>
+
+The input is encirkeld in red. In HTML this input means commenting out text. If this is appended on the web page the text below the newly inputted text wont be displayed. 
 
 ### XSS BASED SESSION HIJACKING
 
