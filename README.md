@@ -710,7 +710,15 @@ There are at least 3 good reasons for delaying the HTML filtering to output time
 - When filtering at input time, incoming data that is stored in a database will be HTML encoded. This means any non-HTML part of the application, using the same database, will have to remove the HTML encoding.
 - HTML encoding expands data strings. This can cause database problems when there are restricted lenght database fields.
 
+When filtering HTML there are generally 3 options depending on the data:
+- If the data does not contain markup at all, we should HTML encode the data before passing it to the client.
+- If the user should be allowed to enter markup but no dangerous constructs, it will be harder to filter. In this case we need to look at all tags and attributes and let some through. The rest needs to be HTML encoded.
+- If the application allows the user to enter whatever markup they like, we can just send the data as it is. In this case we whould keep the consequenses in mind.
 
+HTML encoding is the mapping of certain HTML metacharachters to their character entity equilivant. see image below </br>
+
+![htmlencoding](https://user-images.githubusercontent.com/24454699/56236116-6185a000-6078-11e9-95f4-f764467a47f5.png)
+</br>
 
 ## WEB TROJANS
 
