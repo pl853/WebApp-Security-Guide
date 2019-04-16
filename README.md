@@ -599,10 +599,21 @@ Before we start of with this section we should recap some of the previous learni
 ![recapuserinput](https://user-images.githubusercontent.com/24454699/56157951-49e2e480-5fb0-11e9-8acc-6d5fb9f6cc3a.png)
 </br>
 
+There are 2 ways to handle the invalid input:
+- We can tell the user in a nice way that he/she entered the wrong information. When the user has t0 fill in personal information for example. (client side)
+- For bad server generated input we dont have to be polite since if this happends it's most of the time not an accident.
 
+![warningmodify](https://user-images.githubusercontent.com/24454699/56228457-68f07d80-6067-11e9-9120-e2f14f9ddea2.png)
+
+## OUTPUT HANDLING
+Output handling is the same as passing data to a subsystem. (recap if needed) </br>
+We also need to pay to pay attention to metacharachters in this case. A lot of programmers who are good at escaping metacharachters that get passed to the internal system, forget to think about the final destination of the data. The final destination is the users browser. An attacker can make use of something called Cross site scripting in this case.
 
 
 ## CROSS SITE SCRIPTING (XSS)
+XSS is about tricking the webserver into passing malicious HTLM (scripts), to the user. </br>
+There are multiple reasons for an attacker to perform such an attack:
+- Most of the time its about stealing session information, as we already know the attacker can contact the site on behalf of the victim
 
 ### XSS BASED SESSION HIJACKING
 
