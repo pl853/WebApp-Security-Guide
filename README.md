@@ -695,9 +695,22 @@ In some cases, such as when data is inserted as part of a tag attribute, the par
 ![taginsert](https://user-images.githubusercontent.com/24454699/56233766-5714d780-6073-11e9-98cb-0121ea3ad65f.png)
 </br>
 
-In this image the input provided by the user will be inserted where the dots are. For the attacker to be able to insert a new tag, he first has to terminate the input tag for the HTML parser to switch context.
+In this image the input provided by the user will be inserted where the dots are. For the attacker to be able to insert a new tag, he first has to terminate the input tag for the HTML parser to switch context. A workaround for this is to add "> infront of the script tag.  Because the original value was encapsulated in double quotes the attacker inserts a double qoute and a greater than sign to open up for a new script tag. If the value was encapsulated in singel quote that attacker would do the same but then with a single quote.
 
 ### PREVENTING XSS
+To avoid XXS from happening we , AGAIN, have to escape metacharachters. This is called HTML encoding. </br>
+A lot of developers choose to handle the XSS problem at input time, this is because:
+- They see it as an input problem
+- They like to get rid of the problem as soon as possible.
+- The think it's hard to remember doing any special treatment every time they generate some output. (which happends quite often)
+
+The XSS problem doenst lie with the input, but with data passing. This means it should be dealt with at the time data is passed, in HTML this is when our application generates some output. </br>
+There are at least 3 good reasons for delaying the HTML filtering to output time:
+- Not only user generated input has to be HTML encoded.
+- When filtering at input time, incoming data that is stored in a database will be HTML encoded. This means any non-HTML part of the application, using the same database, will have to remove the HTML encoding.
+- HTML encoding expands data strings. This can cause database problems when there are restricted lenght database fields.
+
+
 
 ## WEB TROJANS
 
