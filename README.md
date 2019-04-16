@@ -115,7 +115,7 @@ A user want so send money via a bank transfer. The user wants to send the money 
 On a request the referer header contains the url  of the website  where the document is located. This is also the case when you have an image on your website that is from another website. (in the image below you can see an example of this) </br>
 ![urlheader](https://user-images.githubusercontent.com/24454699/56095993-ebdfcf80-5ed1-11e9-942d-b6e8ec2b6705.png)
 </br>
-In the image above the the image used is from the website : http://www.site.example/index.html. This meanse that you use a snippit (small part) of the html code from that website. It's the same for the link below the image. 
+In the image above, there is an image which is being used from the website : http://www.site.example/index.html. This meanse that you use a snippit (small part) of the html code from that website. It's the same for the link below the image. 
 
 ### SECURITY CONCERN: REFERER HEADER
 Because a part of the code,  from the website that has the image on it,  is used in your own website, it will  also use any JavaApplets, ActiveX scripts and plug-ins included in that  page.
@@ -688,7 +688,14 @@ The image below is another visual representation of cross site scripting. </br>
 ![xssvisual](https://user-images.githubusercontent.com/24454699/56233447-a3abe300-6072-11e9-992d-a6b9410cefe8.png)
 </br>
 
-The most obvious XSS occurs when someone inserts a script tag (<scirpt> </script>)
+The most obvious XSS occurs when someone inserts a script tag (<scirpt> </script>). This type of insertion is possible when the HTML parser is not already encapsulated in another tag. </br>
+
+In some cases, such as when data is inserted as part of a tag attribute, the parser is not ready to accept a new tag directly. see image below </br>
+
+![taginsert](https://user-images.githubusercontent.com/24454699/56233766-5714d780-6073-11e9-98cb-0121ea3ad65f.png)
+</br>
+
+In this image the input provided by the user will be inserted where the dots are. For the attacker to be able to insert a new tag, he first has to terminate the input tag for the HTML parser to switch context.
 
 ### PREVENTING XSS
 
