@@ -654,11 +654,39 @@ Passing the cookie is most easily done using a script that redirects the browser
 ![cookiestealing](https://user-images.githubusercontent.com/24454699/56231328-ba9c0680-606d-11e9-9ea5-ea562f60f9e7.png)
 </br>
 
-When performing this attack the 
+When performing this attack the victim will notice something happend because the URL and the content of the page changed. To counter this the attacker can hide the theft by making sure the script redirects back to the original site. see image below </br>
+
+![redirectscript](https://user-images.githubusercontent.com/24454699/56231699-a86e9800-606e-11e9-93bf-a97f53ca463b.png)
+</br>
+
+Now all the victim will see is a short flicker. The visit to the malicious website is also not saved in the browser history since the line , document.location.replace overwrites the current history entry.
 
 ### TEXT MODIFICATION 
 
-### SECURITY CONCERNS: XSS
+Another way to use XSS to attack a victim is to change information displayed on a page. Take the image below for example </br>
+
+![textmodbank](https://user-images.githubusercontent.com/24454699/56232033-6134d700-606f-11e9-87af-c1efe4fb439a.png)
+</br>
+
+In this case the victim tries send money via a bank. For extra security the bank uses manual inspection before the transfer is accepted. The application does not filter the address field, making it possible for the attacker to implent a malicious script that runs in the browser of the bankclerk. </br>
+In this tranfser the attacker wants to transfer money from the victims acount (12345) to the account of the attacker. Normally the transfer would be rejected because its not allowed to transfer money from someones account to your account. </br>
+In this case the script injected in the address field replaces the attackers account number with the victims account number. see image below </br>
+
+![scriptaccchange](https://user-images.githubusercontent.com/24454699/56232655-d523af00-6070-11e9-8fef-d30716d3d1ab.png)
+</br>
+
+So on the webpage displayed on the clerks computer it looks like the victim is sending money to himself while the info stored in the database still sends the money from the victim to the attacker. The image below is a visual represantation of the whole process. </br>
+
+![moneyattack](https://user-images.githubusercontent.com/24454699/56232988-9510fc00-6071-11e9-8107-252c010d91a9.png)
+</br>
+
+### THE PROBLEM
+Since XSS only works when a web apllication can be tricked into passing HTML (modified by the attacker) to the victim the problem lies, AGIAN, with the metacharachters. In this case the HTML parser in the browser interpets pieces of HTML that the original developer did not intend to send. This was the same case with SQL parsers in SQL injections. (recap if needed) </br>
+
+The image below is another visual representation of cross site scripting. </br>
+
+![xssvisual](https://user-images.githubusercontent.com/24454699/56233447-a3abe300-6072-11e9-992d-a6b9410cefe8.png)
+</br>
 
 ### PREVENTING XSS
 
