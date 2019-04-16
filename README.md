@@ -623,9 +623,38 @@ Take for example an online guest book which lets visitios enter whatever they li
 ![xssex1](https://user-images.githubusercontent.com/24454699/56229583-bf5ebb80-6069-11e9-8602-b4a5c5171828.png)
 </br>
 
-The input is encirkeld in red. In HTML this input means commenting out text. If this is appended on the web page the text below the newly inputted text wont be displayed. 
+The input is encirkeld in red. In HTML this input means commenting out text. If this is appended on the web page the text below the newly inputted text wont be displayed.</br>
+
+Another example of a malicious scrips could be on a website intended for kids. see image below </br>
+
+![xssex2](https://user-images.githubusercontent.com/24454699/56229822-53c91e00-606a-11e9-90a5-7691de574430.png)
+</br>
 
 ### XSS BASED SESSION HIJACKING
+By now you should know what session hijacking is. This can also be done by Cross site scripting. Take for example cookie based sessions. If a cookie is available to a script the attacker could install the cookie on his own browser and now , for the server, it appears as if the attacker is the victim. The image below is a visual represantation of cookie based session hijacking. </br>
+
+![xssvisal](https://user-images.githubusercontent.com/24454699/56230090-0e592080-606b-11e9-882a-afbb84d53d50.png)
+</br>
+
+But how does the attacker get the cookie?</br>
+The required cookie only exists in the communication between the victim and the webserver. For a script to access the cookie it will have to be includded in a page sent from the webserver directly to the victims browser.</br>
+Take for example a discussion forum that allows scripts in notes created by users. </br>
+There are four steps needed to perform the simplest XXS-based session hijacking. The image below is a visualisation of the 4 steps. </br>
+
+![xssnote](https://user-images.githubusercontent.com/24454699/56230504-ef0ec300-606b-11e9-936f-930e188f08e9.png)
+</br>
+
+- The attacker first creates a note containing cookie stealing Javascript. The server will save this note (and the malicious script). When the victim logs onto the website he will recieve his own SessionID from the server. 
+- When the users reads the attackers note the server will build a webpage containing the text and the malicious script.
+- As part of displaying the webpage the script will run in the victims browser. The script picks up the cookie and sends it to the attackers computer.
+- After the attacker recieves the cookie he will install it on his browser tricking the server in thinking he's the victim.
+
+Passing the cookie is most easily done using a script that redirects the browser to a webserver running on the attackers computer, taking the cookie with it. see image below </br>
+
+![cookiestealing](https://user-images.githubusercontent.com/24454699/56231328-ba9c0680-606d-11e9-9ea5-ea562f60f9e7.png)
+</br>
+
+When performing this attack the 
 
 ### TEXT MODIFICATION 
 
